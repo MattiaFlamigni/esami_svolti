@@ -1,0 +1,41 @@
+fieldset{
+    border: blue dotted;
+}
+
+input[type="submit"]{
+    rotate: -10deg;
+    color:white;
+    background-color: blue;
+    animation-name: animazione;
+    text-decoration: overline;
+    float: right;
+    width:40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 400px;
+    margin-right: -30%;
+}
+
+form>fieldset{
+    width:40%;
+    float:left
+}
+
+form fieldset:nth-child(2){
+    float: right;
+    color:green;
+    height: 50px;
+}
+
+
+    
+@keyframes animazione{
+    from {background-color: blue;}
+    to {background-color: yellow;}
+}
+
+
+header>h1{
+    text-decoration: underline overline;
+}

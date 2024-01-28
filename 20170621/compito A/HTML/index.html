@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>esame</title>
+
+
+        <style>
+            table,tr,td,th{
+                border: 1pt solid black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="5">Appelli d'esame</td> 
+                </tr>
+
+                <tr>
+                    <th id=attivita-formative colspan="2" scope="col">Attività formative</th> <th rowspan="2" id="data-ora" scope="col">Data Ora</th> <th rowspan="2" id="campus" scope="col">Campus</th> <th rowspan="2" id="iscritti" scope="col">Iscritti</th> 
+                </tr>
+
+                <tr>
+                    <th id="codice" scope="col">codice</th> <th id="nome" scope="col">nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td headers="codice attivita-formative">41731</td> <td headers="nome attivita-formative">Tecnologie Web</td> <td headers="data-ora">21 giugno 2017</td> <td headers="campus">Cesena</td> <td headers="iscritti">31</td>
+                </tr>
+                <tr>
+                    <td headers="codice attivita-formative">28106</td> <td headers="nome attivita-formative">nformatica per le scienze ambientali</td> <td headers="data-ora" rowspan="3">29 giugno 2017</td> <td headers="campus" rowspan="3">Ravenna</td> <td headers="iscritti" >17</td>
+                </tr>
+                <tr>
+                    <td headers="codice attivita-formative">28106</td> <td headers="nome attivita-formative"> abilita informatiche</td> <td headers="iscritti">2</td>
+                </tr>
+                <tr>
+                    <td headers="codice attivita-formative">58157</td> <td headers="nome attivita-formative">computer etc etc</td>  <td headers="iscritti">5</td>
+                </tr>
+                <tr>
+                    <td headers="codice attivita-formative">17667</td> <td headers="nome attivita-formative">sistemi multimediali</td> <td headers="data-ora">21 giugno 2017</td> <td headers="campus">Cesena</td> <td headers="iscritti">6</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="4" scope="row" id="totale">Totale iscritti</th> <td headers="iscritti totale">61</td>
+                </tr>
+            </tfoot>
+
+
+
+        </table>
+    </body>
+</html>

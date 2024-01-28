@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>iscrizione</title>
+        <link href="index.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Iscrizione</h1>
+        </header>
+
+
+        <main>
+
+            <form action="action.php" target="_blank" method="get">
+                <fieldset>
+                    <legend>Informazioni Personali</legend>
+
+                    <label for="nome">Nome:* </label>
+                    <input type="text" id="nome" name="nome" placeholder="nome" autocomplete="off" required>
+
+                    <label for="cognome">Cognome:* </label>
+                    <input type="text" id="cognome" name="cognome" placeholder="cognome" autocomplete="off" required>
+
+                    <label for="data">Data di nascita:</label>
+                    <input type="date" id="data" name="data" min="900-01-01">        
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informazioni aggiuntive</legend>
+                    <label>Scegli un colore</label>
+                    <input type="color" id="coloreP" name="colore" value="red"><br/>
+
+                    <label>Oppure scegli dalla lista:</label> <br/>
+
+                    <input type="radio" id="rosso" name="colore" value="Rosso" checked>
+                    <label for="rosso">Rosso</label>
+                    
+                    <input type="radio" id="blu" name="colore" value="Blu">
+                    <label for="blu">Blu</label>
+                    
+                    <input type="radio" id="verde" name="colore" value="Verde">
+                    <label for="verde">Verde</label>
+                    
+                    <input type="radio" id="altro" name="colore" value="Altro">
+                    <label for="altro">Altro</label>
+                    
+                </fieldset>
+                <input type="submit" value="invia">
+            </form>
+
+        </main>
+    </body>
+</html>

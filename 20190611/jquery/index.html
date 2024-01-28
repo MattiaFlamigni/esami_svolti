@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<title>Oggetti</title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="soluzione.js" type="text/javascript"></script>
+	<style>
+	div{ text-align: right;}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Esercizio javascript/jQuery</h1>
+	</header>
+	<label>Base <input type="number" name="base" /></label>
+	<label>Altezza <input type="number" name="altezza" /></label>
+	<button>Genera Rettangolo</button>
+	<div></div>
+</body>
+</html>
+
+
+
+<script>
+	class rettangolo{
+		constructor(base, altezza){
+			this.base = base;
+			this.altezza = altezza;
+		}
+
+		stampaInConsole(){
+			console.log("base: " + this.base);
+			console.log("altezza: " + this.altezza);
+			console.log("perimetro: " + (this.base*this.base + this.altezza * this.altezza));
+		}
+		visualizzaInDOM(){
+			const divTarget = document.getElementsByTagName("div")[0];
+			let newDiv = document.createElement("div");
+			
+			newDiv.style.width=this.base + "px";
+			newDiv.style.height=this.altezza + "px";
+			newDiv.style.border="1pt solid black";
+			let x = document.createElement("a");
+			x.textContent="X";
+			x.href="#";
+			newDiv.appendChild(x);
+			divTarget.appendChild(newDiv);
+
+			let a = document.getElementsByTagName("a");
+
+
+			for(let i = 0; i<a.length;i++){
+				a[i].addEventListener("click", function(){
+					let newDiv = this.parentElement;
+					newDiv.remove();
+				})
+			}
+
+			
+		}
+	}
+
+
+	document.getElementsByTagName("button")[0].addEventListener("click", function(){
+		const myrettangolo = new rettangolo(document.getElementsByTagName("input")[0].value, document.getElementsByTagName("input")[1].value);
+			myrettangolo.stampaInConsole();
+			myrettangolo.visualizzaInDOM();
+	});
+	
+</script>

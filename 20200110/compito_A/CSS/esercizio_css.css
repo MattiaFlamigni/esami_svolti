@@ -1,0 +1,54 @@
+
+body>*{
+    font-family: Arial;
+    font-size: 100%;
+}
+
+header>h1{
+    color: blue;
+    text-align: center;
+    border: 2pt dotted blue;
+    border-radius: 25px;
+    font-weight: bold;
+    padding:2%;
+}
+
+header{
+    width: 94%;
+}
+
+nav{
+    width: 92%;
+    text-align: center;
+}
+
+nav>ul>li{
+    border: 2px solid blue ;
+    border-radius: 5px;
+    width:20%;
+    display: inline-block;
+    padding:10px;
+}
+
+nav>ul :hover{
+    background-color: lightgreen;
+    border-color: green;
+}
+
+li>a{
+    color:black;
+    text-decoration: none;;
+}
+
+section{
+    color:black;
+    text-align: left;
+}
+
+footer{
+    width:98%;
+    border: 2px solid blue ;
+    border-radius: 15px;
+    color:black;
+    text-align: center;
+}

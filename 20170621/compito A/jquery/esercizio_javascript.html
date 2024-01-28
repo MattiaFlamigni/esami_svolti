@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Mio sito</title>
+	<script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script src="soluzione.js" type="text/javascript"></script>
+	<style>
+		div.slider-control{
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		div.slider-image{
+			margin-top: 20px;
+			text-align: center;
+		}
+		div.slider-image > img{
+			display: inline-block;
+			width: 100px;
+			border: 1px solid #000;
+		}
+		div.popup{
+			width: 95%;
+			height: 600px;
+			border: 1px solid #000;
+			position: absolute;
+			top: 10px;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Esercizio javascript/jQuery</h1>
+	</header>
+	<main>
+		<h2>Tecnologie</h2>
+		<div class="slider">
+			<div class="slider-image">
+				<img src="html.png" alt="Html" />
+				<img src="css.png" alt="Css" />
+				<img src="jquery.png" alt="jQuery" />
+			</div>
+			<div class="popup">
+				<div class="slider-control">
+					<button id="prev">Precedente</button>
+					<button class="foll">Successiva</button>
+					<button class="close">Chiudi</button>
+				</div>
+				<div class="picture"></div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+
+
+<script>
+	const divNascosto = document.getElementsByClassName("popup")[0];
+	const pictureDiv = document.querySelector(".picture");
+	const slider = document.querySelector(".slider-image");
+	const prev = document.querySelector(".prev");
+	const images = document.getElementsByTagName("img");
+
+	let current=0;
+
+	/*nascondo div all'aoertura*/
+	document.addEventListener("DOMContentLoaded", function(){
+		divNascosto.style.display="none";
+	});
+
+	/*close btn*/
+	document.querySelector(".close").addEventListener("click", function(){
+		pictureDiv.innerHTML="";
+		divNascosto.style.display="none";
+	});
+
+	/*prev btn*/
+	document.getElementById("prev").addEventListener("click", function(){
+		pictureDiv.innerHTML="";
+		current-=1;
+		if(current<0){
+			current=images.length-1;
+		}
+		let cloned = images[current].cloneNode();
+		pictureDiv.appendChild(cloned);
+
+	});
+
+	/*foll btn*/
+	document.querySelector(".foll").addEventListener("click", function(){
+		pictureDiv.innerHTML="";
+		current+=1;
+		if(current>images.length-1){
+			current=0;
+		}
+		let cloned = images[current].cloneNode();
+		pictureDiv.appendChild(cloned);
+
+	});
+
+
+
+
+
+
+	/*add image to div*/
+	
+	for(let i = 0; i<images.length; i++){
+		images[i].addEventListener("click", function(){
+			let cloned = images[i].cloneNode();
+			pictureDiv.appendChild(cloned);
+			divNascosto.style.display="initial";
+			current = i;
+
+		});
+	}
+
+
+
+
+
+	
+</script>
